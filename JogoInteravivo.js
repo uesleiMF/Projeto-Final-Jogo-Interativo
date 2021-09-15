@@ -1,48 +1,37 @@
 const prompt = require('prompt-sync')();
 
-console.log();
-console.log("[===++##***JOGO INTERATIVO***##++===]");
-console.log();
-console.log("[========VAMOS COMECAR O JOGO=======]");
-console.log();
-console.log("------PREENCHAR NOME DO JOGADOR"------);
-console.log();
-
-
-var jogador= ""; 
-var vidas= 10;
-var passos= 0;
+var vidas= 15;
+var passos= 76;
 var pontos=10;
-var tomouCafe=10;
-var tomouBanho=10; 
-var acertos=0;  
-var mediaDeAcertos=(acertos+tomouBanho+tomouCafe+vidas+pontos+passos);
+var tomouCafe=8;
+var tomouBanho=9; 
+var acertos=10;  
+var mediaDeAcertos=(acertos+tomouBanho+tomouCafe+vidas+pontos+passos)/10;
 let answer= 'S';
-
-
 
 
 function resetcounter(){
   jogador = "";
-  passos=  0;
+  
 }
 
 while ( answer === 'S' ) {
   resetcounter();
 
- 
-jogador=prompt("Digite seu nome aqui:"); 
-console.log(jogador); 
-console.log(); 
-passos= prompt("Quantidades de passos:")
-console.log(passos); 
-console.log(); 
-
+  
 function sleep (delay) {
     var start = new Date().getTime()
     while (new Date().getTime() < start+ delay);
    }
    
+   console.log();
+   console.clear();
+   console.log("[===++##***JOGO INTERATIVO***##++===]");
+   console.log();
+   console.log("[=====VAMOS COMECAR O JOGO=====]");
+   console.log();
+   sleep(6000);
+  
    console.log(); 
     console.clear();
     console.log("Vidas: " + vidas ); 
@@ -58,18 +47,17 @@ function sleep (delay) {
     sleep(5000);
     console.clear();
 
-    if(mediaDeAcertos >= 50){ 
-        console.log(); 
-          console.log(" CONTINUE ASSIM VC VENCEU O JOGO");  
-          console.log(); 
-        }else if(mediaDeAcertos < 50){  
-            console.log(); 
-         console.log("FIM DO JOGO VC PERDEU");  } 
-         console.log(); 
+    console.log(); 
 
+         let jogador={
+            nome:"Ueslei",
+            idade: 37,
+            genero: "Masculino",
+        }
+         console.log(jogador);
+         
+         console.log();
 
-     console.log("Nome: " + jogador); 
-     console.log(); 
      console.log("Vidas: " + vidas ); 
      console.log(); 
      console.log("Quantidade de passos: " +passos ); 
@@ -82,8 +70,18 @@ function sleep (delay) {
      console.log(); 
      console.log("Media De Acertos:" + mediaDeAcertos);
      console.log(); 
+
+     if(mediaDeAcertos >= 10){ 
+        console.log(); 
+          console.log(" CONTINUE ASSIM VC VENCEU O JOGO");  
+          console.log(); 
+        }else if(mediaDeAcertos <=9.9){  
+            console.log(); 
+         console.log("FIM DO JOGO VC PERDEU");  } 
+         console.log(); 
      answer = prompt('JOGAR NOVAMENTE? [S / N] ');
      console.log(); 
+
     } if (answer = 'S') {
         console.log(); 
         console.log('Fim do Jogo!')
@@ -101,6 +99,8 @@ function sleep (delay) {
    var ano=data.getFullYear();
    console.log("Marabá-PA, " + dia + 
    " de " + meses[mes] + " de " + ano ); 
+
+
 
 
 
